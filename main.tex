@@ -1,32 +1,40 @@
 %pdflatex, utf8
 \documentclass[unicode, 12pt, a4paper, oneside]{article}
 
+% Установка полей страницы
 \usepackage{anysize}
 \marginsize{2cm}{1cm}{1cm}{1cm}
 
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[russian]{babel}
+% Пддержка русского языка
+\usepackage[T2A]{fontenc}		% Кодировка шрифта
+\usepackage[utf8]{inputenc}		% Кодировка ввода
+\usepackage[russian]{babel}		% Словарь расстановки переносов
 
+% Всякие математические фишки
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 
+% Изменение цвета, работа с графикой
 \usepackage{color}
 \usepackage{graphicx}
 \graphicspath{{images/}}
 
+% Команда для вставки ссылок \url{URL}
 \usepackage[hyphens]{url}
-\usepackage[unicode]{hyperref}
-\urlstyle{rm}
+\urlstyle{rm}					% Стиль шрифта ссылок: с засечками
 
+% Кликабельные ссылки внутри документа
+\usepackage[unicode]{hyperref}
+
+% Настрйока стиля списков
 \usepackage{enumitem}
 \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
 \setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
 
-\usepackage{textcomp}
-\usepackage{cmap}
-\usepackage{float} % чтобы изображения не убегали куда не надо
+\usepackage{textcomp}			% Команды для вставки разных символов (градусы, проценты, итд)
+\usepackage{cmap}				% Перекодировка символов в pdf (чтобы работал поиск и копировалось что надо)
+\usepackage{float}				% Размещение плавающих объектов там где они созданы (X)
 
 \newcounter{qcnt}
 \newcommand{\quest}[1]{\vspace{0.5cm}\par\refstepcounter{qcnt}\textbf{\arabic{qcnt}.\quad #1}}
