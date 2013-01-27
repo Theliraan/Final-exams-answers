@@ -14,11 +14,15 @@
 
 \usepackage{color}
 \usepackage{graphicx}
+\graphicspath{{images/}}
+
 \usepackage[hyphens]{url}
 \usepackage[unicode]{hyperref}
-
-\graphicspath{{images/}}
 \urlstyle{rm}
+
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
 
 \newcounter{qcnt}
 \newcommand{\quest}[1]{\par\refstepcounter{qcnt}\textbf{\arabic{qcnt}.\quad #1}}
