@@ -6,9 +6,10 @@
 \marginsize{2cm}{1cm}{1cm}{1cm}
 
 % Пддержка русского языка
-\usepackage[T2A]{fontenc}		% Кодировка шрифта
+%\usepackage[T2A]{fontenc}		% Корректная кодировка шрифта при использовании cm-super
 \usepackage[utf8]{inputenc}		% Кодировка ввода
 \usepackage[russian]{babel}		% Словарь расстановки переносов
+\usepackage{cmap}				% Перекодировка символов в pdf (чтобы работал поиск и копировалось что надо), при использовании обычного cm
 
 % Всякие математические фишки
 \usepackage{amsmath}
@@ -17,7 +18,7 @@
 
 % Изменение цвета, работа с графикой
 \usepackage{color}
-\usepackage{graphicx}
+\usepackage[pdftex]{graphicx}
 \graphicspath{{images/}}
 
 % Команда для вставки ссылок \url{URL}
@@ -35,7 +36,6 @@
 \setlist[itemize,3]{label=$\star$}
 
 \usepackage{textcomp}			% Команды для вставки разных символов (градусы, проценты, итд)
-\usepackage{cmap}				% Перекодировка символов в pdf (чтобы работал поиск и копировалось что надо)
 \usepackage{float}				% Размещение плавающих объектов там где они созданы (X)
 
 \newcounter{qcnt}
