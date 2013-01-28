@@ -29,8 +29,10 @@
 
 % Настрйока стиля списков
 \usepackage{enumitem}
-\setitemize{noitemsep, labelindent=\parindent, leftmargin=*, label=\textendash}
-\setenumerate{noitemsep, labelindent=\parindent, leftmargin=*}
+\setlist{noitemsep, leftmargin=*, labelindent=\parindent}
+\setlist[itemize,1]{label=$\diamond$}
+\setlist[itemize,2]{label=\textendash}
+\setlist[itemize,3]{label=$\star$}
 
 \usepackage{textcomp}			% Команды для вставки разных символов (градусы, проценты, итд)
 \usepackage{cmap}				% Перекодировка символов в pdf (чтобы работал поиск и копировалось что надо)
