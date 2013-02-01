@@ -1885,7 +1885,97 @@ $ Z = \dfrac{1 - W_\text{пос}}{W_\text{охв} W_\text{пос}} $.
 % Вопрос 30 ---------------------------------------------------------------------------------------------------------------
 \section{Анализ нелинейных САР.}
 
+Для анализа нелинейных систем применяются методы: фазовых траекторий, припасовывания, гармонической линеаризации, фазовой границы устойчивости и др.
 
+\subsection*{Метод фазовых траекторий}
+
+Фазовой плоскостью называется плоскость на которой по двум координатам X и Y откладываются какие-либо две переменные, характеризующие динамику САР, например отклонение регулируемой величины $ X $ и скорость $ X = Y = dx/dt $.
+
+Уравнение второго порядка удобно свести к системе двух уравнений первого порядка:
+\begin{equation}
+\dfrac{dx}{dt} = f_1(x, y) \quad \dfrac{dy}{dt} = f_2(x, y).
+\end{equation}
+
+Для изображения на фазовой плоскости исключается время t, для чего второе делят на первое:
+\begin{equation}
+\dfrac{dx}{dy} = \dfrac{f_1(x, y)}{f_2(x, y)}.
+\end{equation}
+
+Получаем нелинейное дифференциальное уравнение, решение которого $ Y = F(x) $ называется \textit{фазовой траекторией}.
+
+Для САР, линейная часть которой имеет порядок > 2, применяются \textit{многолистные фазовые плоскости}.
+
+\subsection*{Изображения процессов регулирования на фазовой плоскости.}
+
+\begin{enumerate}
+\item Периодический незатухающий колебательный процесс.
+
+\begin{eqnarray}
+x(t) = a \sin(\omega t)			&\quad& \sin^2(\omega t) = x^2 / a^2 ;\\
+y(t) = a\omega \cos (\omega t)	&\quad& \cos^2(\omega t) = y^2 / a^2 \omega^2;
+\end{eqnarray}
+
+\begin{equation}
+\dfrac{x^2}{a^2} + \dfrac{y^2}{a^2 \omega^2} = 1.
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{30_per_nez.png}
+\caption{Периодический колебательный процесс}
+\end{figure}
+
+
+\item Затухающий колебательный процесс.
+
+\begin{equation}
+x(t) = ae^{-nt} \cos \omega t;
+\end{equation}
+\begin{equation}
+y(t) = ae^{-nt} \sqrt{\omega^2 + n^2} \sin[\omega t + \varphi(t) ].
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{30_coleb_zat.png}
+\caption{Колебания с убывающей амплитудой}
+\end{figure}
+
+
+\item Расходящийся колебательный процесс.
+
+\begin{equation}
+x(t) = ae^{nt} \cos \omega t;
+\end{equation}
+\begin{equation}
+y(t) = ae^{nt} \sqrt{\omega^2 + n^2} \sin[\omega t + \varphi(t) ].
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{30_coleb_rash.png}
+\caption{Колебания с возрастающей амплитудой}
+\end{figure}
+
+
+\item Затухающие апериодические процессы.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{30_aperiod_zat.png}
+\caption{Переходный процесс и фазовая траектория затухающих апериодических процессов}
+\end{figure}
+
+
+\item Расходящиеся апериодические процессы.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{30_aperiod_rash.png}
+\caption{Переходный процесс и фазовая траектория расходящихся апериодических процессов}
+\end{figure}
+
+\end{enumerate}
 
 % Вопрос 31 ---------------------------------------------------------------------------------------------------------------
 \section{Показатели качества ЭС.}
