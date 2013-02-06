@@ -1498,7 +1498,7 @@ w(s) = k \dfrac{1}{Ts + 1}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\linewidth]{23_lchars.png}
+\includegraphics[width=0.7\linewidth]{23_lchars.png}
 \caption{Логарифмические характеристики апериодического звена первого порядка}
 \end{figure}
 
@@ -1578,7 +1578,7 @@ X(t) = \sum_{i=1}^{n} \left[ (s - s_i)\dfrac{M(s)}{D(s)} e^{st} \right]_{s + s_i
 		\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\linewidth]{25_usil.png}
-		\caption{Частотные характеристики звена}
+		\caption{Временные и частотные характеристики звена}
 		\end{figure}
 	\end{itemize}
 
@@ -1602,7 +1602,7 @@ X(t) = \sum_{i=1}^{n} \left[ (s - s_i)\dfrac{M(s)}{D(s)} e^{st} \right]_{s + s_i
 		\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.75\linewidth]{25_ap1.png}
-		\caption{Частотные характеристики звена}
+		\caption{Временные и частотные характеристики звена}
 		\end{figure}
 	\end{itemize}
 
@@ -1621,7 +1621,7 @@ X(t) = \sum_{i=1}^{n} \left[ (s - s_i)\dfrac{M(s)}{D(s)} e^{st} \right]_{s + s_i
 		\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.75\linewidth]{25_ap2.png}
-		\caption{Частотные характеристики звена}
+		\caption{Временные и частотные характеристики звена}
 		\end{figure}
 	\end{itemize}
 
@@ -1645,7 +1645,7 @@ X(t) = \sum_{i=1}^{n} \left[ (s - s_i)\dfrac{M(s)}{D(s)} e^{st} \right]_{s + s_i
 		\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.75\linewidth]{25_integr.png}
-		\caption{Частотные характеристики звена}
+		\caption{Временные и частотные характеристики звена}
 		\end{figure}
 	\end{itemize}
 
@@ -1670,7 +1670,7 @@ X(t) = \sum_{i=1}^{n} \left[ (s - s_i)\dfrac{M(s)}{D(s)} e^{st} \right]_{s + s_i
 		\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.75\linewidth]{25_dif1.png}
-		\caption{Частотные характеристики звена}
+		\caption{Временные и частотные характеристики звена}
 		\end{figure}
 	\end{itemize}
 
@@ -1690,7 +1690,7 @@ X(t) = \sum_{i=1}^{n} \left[ (s - s_i)\dfrac{M(s)}{D(s)} e^{st} \right]_{s + s_i
 		\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.75\linewidth]{25_dif2.png}
-		\caption{Частотные характеристики звена}
+		\caption{Временные и частотные характеристики звена}
 		\end{figure}
 	\end{itemize}
 
@@ -1731,7 +1731,33 @@ X(t) = \sum_{i=1}^{n} \left[ (s - s_i)\dfrac{M(s)}{D(s)} e^{st} \right]_{s + s_i
 \caption{Матрица Гурвица}
 \end{figure}
 
-Определитель $ \Delta_n $ составляется следующим образом: главная диагональ состоит из коэффициентов характеристического уравнения. Начиная со второго коэффициента заполняются строки: слева --- в порядке убывания индексов, справа --- в порядке возрастания.
+Определитель $ \Delta_n $ составляется следующим образом: главная диагональ состоит из коэффициентов характеристического уравнения записанных начиная со второго ($ a_{n-1} $). Строки заполняются следующим образом: в левую сторону от основной диагонали записываются коэффициенты в порядке убывания индексов, в правую --- в порядке возрастания. Остальные ячейки заполняются нулями.
+
+\textbf{Например}, характеристическое уравнение имеет вид:
+$$ 0,05 \cdot S^3 + 0,15 \cdot S^2 + 0,7 \cdot S + 1 = 0. $$
+
+Все коэффициенты характеристического уравнения положительны, следовательно необходимое условие устойчивости системы выполняется.
+
+Матрица Гурвица запишется как:
+$$
+\begin{pmatrix}
+a_2 & a_3 & 0   \\
+a_0 & a_1 & a_2 \\
+0   & 0   & a_0 \\
+\end{pmatrix}
+\quad = \quad
+\begin{pmatrix}
+0,15	& 0,05	& 0		\\
+1		& 0,7	& 0,15	\\
+0		& 0		& 1		\\
+\end{pmatrix}.
+$$
+
+\par $ \Delta_1 = a_2 =  0,05 > 0.$
+\par $ \Delta_2 = a_2 a_1 - a_3 a_0 =  0,15 \cdot 0,7 - 0,05 = 0,055 > 0.$
+\par $ \Delta_3 = a_2 a_1 a_0 - a_0 a_3 a_0 = 0,15 \cdot 0,7 - 0,05 = 0,055 > 0.$
+
+Достаточное условие так же выполняется (все диагональные миноры больше нуля), следовательно САУ с таким характеристическим уравнением является устойчивой.
 
 % Вопрос 27 ---------------------------------------------------------------------------------------------------------------
 \section{Частотные критерии устойчивости линейных САР.}
