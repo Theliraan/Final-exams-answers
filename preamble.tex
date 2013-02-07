@@ -1,0 +1,88 @@
+% !TeX spellcheck = ru_RU
+%pdflatex, utf8
+\documentclass[unicode, 10pt, a5paper, oneside]{article}
+
+% Установка полей страницы
+%\usepackage{anysize}
+%\marginsize{0.3cm}{0.3cm}{0.3cm}{0.3cm}
+\usepackage[a5paper, margin=0.3cm, bindingoffset=0cm]{geometry}
+
+% Поддержка русского языка
+\usepackage[T2A]{fontenc}		% Корректная кодировка шрифта при использовании cm-super
+\usepackage[utf8]{inputenc}		% Кодировка ввода
+\usepackage[russian]{babel}		% Словарь расстановки переносов
+%\usepackage{cmap}				% Перекодировка символов в pdf при использовании обычного cm
+
+% Всякие математические фишки
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% Изменение цвета, работа с графикой
+\usepackage{color}
+\usepackage[pdftex]{graphicx}
+\graphicspath{{images/}}
+
+% Команда для вставки ссылок \url{URL}
+\usepackage[hyphens]{url}
+\urlstyle{rm}					% Стиль шрифта ссылок: с засечками
+
+% Кликабельные ссылки внутри документа
+\usepackage[unicode]{hyperref}
+
+% Включает отступ у первого абзаца в разделе
+\usepackage{indentfirst}
+
+% Настрйока стиля списков
+\usepackage{enumitem}
+\setlist{noitemsep, leftmargin=*, labelindent=\parindent, topsep=0pt, parsep=0pt, partopsep=0pt}
+
+\setlist[itemize,1]{label=$\diamond$}
+\setlist[itemize,2]{label=\textendash}
+\setlist[itemize,3]{label=$\star$}
+
+\renewcommand{\alph}[1]{\asbuk{#1}} % Костыль для кирилической нумерации вместо латинской
+\setlist[enumerate,1]{label=\arabic*)}
+\setlist[enumerate,2]{label=\alph*)}
+\setlist[enumerate,3]{label=(\arabic*)}
+
+
+\usepackage{textcomp}			% Команды для вставки разных символов (градусы, проценты, итд)
+\usepackage{float}				% Размещение плавающих объектов там где они созданы (X)
+\usepackage{wrapfig}			% Обтекаемые текстом рисунки
+
+% Подписи у флоатов
+\setlength{\intextsep}{0pt} % Отстут вокруг плавающих окружений
+\usepackage{caption}
+\captionsetup{parskip=0pt}
+\captionsetup[figure]{labelsep=period,justification=centering,singlelinecheck=false,textfont=small,labelfont=small,aboveskip=2pt,belowskip=0pt}
+
+% Изменение формата заголовков разделов
+\usepackage{titlesec}
+\titleformat{\section}{\newpage\small\bfseries}{\thesection. }{0pt}{}{}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+\titleformat{\subsection}{\small\bfseries}{\thesubsection. }{0pt}{}{}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+\usepackage{array}				% Позволяет объявить свои типы колонок
+\usepackage{calc}				% Математика, исп-ся для расчёта ширины колонки
+\usepackage{longtable}			% Длинные таблицы
+
+% Минимальный отступ в таблицах
+\setlength{\tabcolsep}{1.5mm}
+
+% Новые типы колонок. Ширина задётся как доля от linewidth
+\newcolumntype{L}[1]{p{#1\linewidth-2\tabcolsep-2\arrayrulewidth}}
+\newcolumntype{C}[1]{>{\centering}p{#1\linewidth-2\tabcolsep-2\arrayrulewidth}}
+\newcolumntype{R}[1]{>{\raggedleft}p{#1\linewidth-2\tabcolsep-2\arrayrulewidth}}
+\newcolumntype{U}[2]{p{#1\linewidth-(#2)}}
+
+% Стараться не оставлять одиноких строк в начале и конце абзаца
+\clubpenalty=1000
+\widowpenalty=1000
+
+% Расстановка отступов и переносов
+\emergencystretch=2.5em			% Максимальный промежуток между словами
+\tolerance=2000
+\frenchspacing
