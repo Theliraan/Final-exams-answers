@@ -51,9 +51,11 @@
 \usepackage{float}				% Размещение плавающих объектов там где они созданы (X)
 \usepackage{wrapfig}			% Обтекаемые текстом рисунки
 
-% Подпись под рисунком вида "Рис Х. Название", выранивание по центру даже многострочных подписей
+% Подписи у флоатов
+\setlength{\intextsep}{0pt} % Отстут вокруг плавающих окружений
 \usepackage{caption}
-\captionsetup[figure]{labelsep=period,justification=centering,singlelinecheck=false,textfont=small}
+\captionsetup{parskip=0pt}
+\captionsetup[figure]{labelsep=period,justification=centering,singlelinecheck=false,textfont=small,labelfont=small,aboveskip=2pt,belowskip=0pt}
 
 % Изменение формата заголовков разделов
 \usepackage{titlesec}
@@ -3262,7 +3264,7 @@ N = T_x f_0 = \frac{U_x f_0}{\upsilon_p}
 
 \begin{table}[H]
 \caption{Термопары}
-\centering
+\centering\small
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 Наименование	& Обозн.	& Материалы				& Диапазон		& Макс. $t^\circ$	& Чувствит., мВ/$^\circ$C \\ \hline
@@ -3417,7 +3419,7 @@ a_n=a_0+n \cdot m
     
 Анализируя структурные уровни ЭС можно выделить соответствующие им структурные уровни базовых несущих конструкций (табл. 5.4).
 %table
-\begin{center}
+\begin{center}\small
 \begin{tabular}{|c|c|c|}
 \hline Обозначения структурного& &\\ уровня & ЭС & БНК \\  
 \hline 0 & ЭРЭ, ИС, БИС & Подложка, корпус \\  &(покупные изделия) & \\
@@ -3548,7 +3550,7 @@ G=G'V_{\Sigma}
 \section{Климатические зоны и категории исполнения.}
 
 Климат --- характерная для данной области на поверхности Земли совокупность типичных изменений атмосферных процессов, обусловливаемых географическими координатами, уровнем солнечной радиации, строением земной поверхности и т.д.
-\begin{center}
+\begin{center}\small
 \begin{tabular}{|c|c|}
 \hline Категории& Характеристика\\исполнения & места \\  изделий & размещения\\
 \hline 1 & на открытом воздухе \\ 
