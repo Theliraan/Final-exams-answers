@@ -1,16 +1,17 @@
 % !TeX spellcheck = ru_RU
 %pdflatex, utf8
-\documentclass[unicode, 14pt, a4paper, oneside]{article}
+\documentclass[unicode, 10pt, a5paper, oneside]{article}
 
 % Установка полей страницы
-\usepackage{anysize}
-\marginsize{2cm}{1cm}{1cm}{1cm}
+%\usepackage{anysize}
+%\marginsize{0.3cm}{0.3cm}{0.3cm}{0.3cm}
+\usepackage[a5paper, margin=0.3cm, bindingoffset=0cm]{geometry}
 
 % Поддержка русского языка
-%\usepackage[T2A]{fontenc}		% Корректная кодировка шрифта при использовании cm-super
+\usepackage[T2A]{fontenc}		% Корректная кодировка шрифта при использовании cm-super
 \usepackage[utf8]{inputenc}		% Кодировка ввода
 \usepackage[russian]{babel}		% Словарь расстановки переносов
-\usepackage{cmap}				% Перекодировка символов в pdf при использовании обычного cm
+%\usepackage{cmap}				% Перекодировка символов в pdf при использовании обычного cm
 
 % Всякие математические фишки
 \usepackage{amsmath}
@@ -34,7 +35,7 @@
 
 % Настрйока стиля списков
 \usepackage{enumitem}
-\setlist{noitemsep, leftmargin=*, labelindent=\parindent}
+\setlist{noitemsep, leftmargin=*, labelindent=\parindent, topsep=0pt, parsep=0pt, partopsep=0pt}
 
 \setlist[itemize,1]{label=$\diamond$}
 \setlist[itemize,2]{label=\textendash}
@@ -52,15 +53,15 @@
 
 % Подпись под рисунком вида "Рис Х. Название", выранивание по центру даже многострочных подписей
 \usepackage{caption}
-\captionsetup[figure]{labelsep=period,justification=centering,singlelinecheck=false}
+\captionsetup[figure]{labelsep=period,justification=centering,singlelinecheck=false,textfont=small}
 
 % Изменение формата заголовков разделов
 \usepackage{titlesec}
-\titleformat{\section}{\newpage\hyphenpenalty=1500\large\bfseries}{\thesection. }{0pt}{}{}
-\titlespacing*{\section}{0pt}{0.5cm}{0.2cm}
+\titleformat{\section}{\newpage\small\bfseries}{\thesection. }{0pt}{}{}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
 
-\titleformat{\subsection}{\hyphenpenalty=1500\normalsize\bfseries}{\thesubsection. }{0pt}{}{}
-\titlespacing*{\subsection}{0pt}{0.2cm}{0.1cm}
+\titleformat{\subsection}{\small\bfseries}{\thesubsection. }{0pt}{}{}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
 
 \usepackage{array}				% Позволяет объявить свои типы колонок
 \usepackage{calc}				% Математика, исп-ся для расчёта ширины колонки
@@ -98,6 +99,7 @@
 		{\large Группа анонимных авторов\\[0.2cm] Йошкар--Ола\\[0.1cm] \today}
 	\end{center}
 \end{titlepage}
+\pagestyle{empty}
 
 % Вопрос 1 ----------------------------------------------------------
 \section{Полупроводниковые приборы. Классификация. Область применения.}
